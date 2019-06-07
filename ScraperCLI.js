@@ -63,4 +63,10 @@ function parseHTML(html) {
     const cheerio = require('cheerio');
     const $ = cheerio.load(html);
     console.log($("h1").text());
+
+    //search entire html for useful data
+
+    //add class to html for each type of data
+
+    //print out each desired class
 }
