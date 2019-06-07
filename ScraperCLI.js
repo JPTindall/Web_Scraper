@@ -13,6 +13,7 @@ if(!email.includes('@')){
     return;
 }
 
+const http = require('http');
 const cheerio = require('cheerio');
 const Knwl = require("knwl.js");
 let knwlInstance = new Knwl('english');
@@ -21,9 +22,13 @@ let knwlInstance = new Knwl('english');
 function getDomain(email) {
     let atIndex = email.indexOf('@') + 1;
     let domain = email.substring(atIndex);
-
     return domain;
 }
 
-const url = "www." + getDomain(email);
+const url = "http://www." + getDomain(email);
 console.log('Site to Search: ' + url + '\n');
+
+//get HTTP
+http.get(url, (res) => {
+   console.log(res.headers);
+});
