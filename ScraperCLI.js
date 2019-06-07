@@ -29,6 +29,33 @@ const url = "http://www." + getDomain(email);
 console.log('Site to Search: ' + url + '\n');
 
 //get HTTP
-http.get(url, (res) => {
-   console.log(res.headers);
-});
+function getSite(url) {
+    http.get(url, (res) => {
+        const { statusCode } = res;
+        const contentType = res.headers['content-type'];
+
+        let error;
+        if(statusCode != 200){
+            error = new Error('Request Failed.\n' +
+            `Status Code: ${statusCode}`);
+        }
+
+        if(error){
+            console.error(error.message);
+            // Consume response data to free up memory
+            res.resume();
+            return;
+        }
+
+        res.setEncoding('utf8');
+        let rawData = '';
+        res.on('data', (chunk) => {rawData += chunk;});
+        res.on('end', () => {
+            return rawData;
+        });
+    });
+
+}
+const html = getSite(url);
+console.log(html);
+// const $ = cheerio.load(html);
