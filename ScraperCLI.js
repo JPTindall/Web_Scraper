@@ -13,8 +13,7 @@ if(!email.includes('@')){
     return;
 }
 
-const http = require('http');
-const cheerio = require('cheerio');
+const https = require('https');
 const Knwl = require("knwl.js");
 let knwlInstance = new Knwl('english');
 
@@ -25,22 +24,23 @@ function getDomain(email) {
     return domain;
 }
 
-const url = "http://www." + getDomain(email);
+const url = "https://www." + getDomain(email);
 console.log('Site to Search: ' + url + '\n');
+getSite(url);
 
-//get HTTP
+//get HTML
 function getSite(url) {
-    http.get(url, (res) => {
-        const { statusCode } = res;
+    https.get(url, (res) => {
+        const {statusCode} = res;
         const contentType = res.headers['content-type'];
 
         let error;
-        if(statusCode != 200){
+        if (statusCode != 200) {
             error = new Error('Request Failed.\n' +
-            `Status Code: ${statusCode}`);
+                `Status Code: ${statusCode}`);
         }
 
-        if(error){
+        if (error) {
             console.error(error.message);
             // Consume response data to free up memory
             res.resume();
@@ -49,13 +49,18 @@ function getSite(url) {
 
         res.setEncoding('utf8');
         let rawData = '';
-        res.on('data', (chunk) => {rawData += chunk;});
+        res.on('data', (chunk) => {
+            rawData += chunk;
+        });
         res.on('end', () => {
-            return rawData;
+            // console.log(rawData);
+            parseHTML(rawData);
         });
     });
-
 }
-const html = getSite(url);
-console.log(html);
-// const $ = cheerio.load(html);
+
+function parseHTML(html) {
+    const cheerio = require('cheerio');
+    const $ = cheerio.load(html);
+    console.log($("h1").text());
+}
