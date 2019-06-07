@@ -19,7 +19,7 @@ server.listen(port, hostname, () => {
 
 //get the domain from an email address
 function getDomain(email) {
-    let atIndex = email.indexOf('@');
+    let atIndex = email.indexOf('@') + 1;
     let domain = email.substring(atIndex);
 
     return domain;
