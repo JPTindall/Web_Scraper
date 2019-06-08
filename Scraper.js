@@ -32,10 +32,11 @@ function getDomain(email) {
 }
 
 const url = "https://www." + getDomain(email);
-let result = getSite(url);
 console.log('Site to Search: ' + url + '\n');
-//print out each desired class
-console.log(result); //TODO make more readable
+getSite(url, function (result) {
+    //print out each desired class
+    console.log(result); //TODO make more readable
+});
 
 //get HTML
 function getSite(url, callback) {
@@ -64,8 +65,8 @@ function getSite(url, callback) {
         });
         res.on('end', () => {
             // console.log(rawData);
-            let text = parseHTML(rawData);
-            let contact = findData(text);
+            let [text,html] = parseHTML(rawData);
+            let contact = findData(text,html);
             callback(contact);
         });
     });
@@ -76,19 +77,23 @@ function parseHTML(html) {
     const cheerio = require('cheerio');
     const $ = cheerio.load(html);
     //entire text on page
-    let text = $("html").html();
-    return text;
+    let text = $("html").text().trim();
+    let raw_html = $("html").html();
+    return [text, raw_html];
 }
 
 //find phone numbers, emails and adresses in a text
-function findData(text) {
+function findData(text,html) {
     const Knwl = require("knwl.js");
-    let knwlInstance = new Knwl('english');
+    let knwlTextInstance = new Knwl('english');
+    let knwlHTMLInstance = new Knwl();
 
-    knwlInstance.init(text);
-    let phones = knwlInstance.get('phones');
-    let emails = knwlInstance.get('emails');
-    let places = knwlInstance.get('places');
+    knwlTextInstance.init(text);
+    knwlHTMLInstance.init(html);
+    let phones = knwlTextInstance.get('phones');
+    let emails = knwlHTMLInstance.get('emails');
+    let places = knwlTextInstance.get('places');
+
 
     //remove duplicates
     let uniqPhone = uniqBy(phones, 'number');
