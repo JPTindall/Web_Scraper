@@ -27,7 +27,11 @@ function REPL(){
                 break;
             default:
                 if(line.includes('@')){
-                    scrape(line);
+                    var callbackPrompt = function (rl) {
+                        rl.setPrompt('\nEnter Email:> ');
+                        rl.prompt();
+                    };
+                    Scraper.begin(line,callbackPrompt,rl);
                 }else{
                     console.log('Invalid Input');
                 }
@@ -36,12 +40,5 @@ function REPL(){
     }).on('close', () => {
         console.log('Closed');
         process.exit(0);
-    });
-}
-
-async function scrape(email) {
-    await Scraper.begin(email)
-    return new Promise(resolve => {
-        resolve();
     });
 }

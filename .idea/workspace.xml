@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7600eede-e2e8-495d-94a9-cde20227bb93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Scraper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scraper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Scraper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScraperCLI.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScraperCLI.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScraperCLI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scraper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="119">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -53,15 +53,14 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SiteReader.js" />
         <option value="$PROJECT_DIR$/ScraperServer.js" />
-        <option value="$PROJECT_DIR$/Scraper.js" />
         <option value="$PROJECT_DIR$/ScraperCLI.js" />
+        <option value="$PROJECT_DIR$/Scraper.js" />
       </list>
     </option>
   </component>
@@ -109,6 +108,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
@@ -160,7 +160,7 @@
       <workItem from="1559853416829" duration="6924000" />
       <workItem from="1559901740511" duration="1539000" />
       <workItem from="1559903939494" duration="21922000" />
-      <workItem from="1559990682225" duration="3732000" />
+      <workItem from="1559990682225" duration="17300000" />
     </task>
     <task id="LOCAL-00001" summary="fixed small error in getDomain function">
       <created>1559905453309</created>
@@ -204,11 +204,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559991721483</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Split into Scraper and CLI.">
+      <created>1559994482275</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559994482275</updated>
+    </task>
+    <task id="LOCAL-00008" summary="removing duplicate results.">
+      <created>1560009168966</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560009168966</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34117000" />
+    <option name="totallyTimeSpent" value="47685000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -256,7 +270,9 @@
     <MESSAGE value="improved getting http from website of email." />
     <MESSAGE value="finding elements in html. Must be called after end of response from server." />
     <MESSAGE value="Finding contact info on page. Half functional, false positive for places, can't find numbers or emails." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finding contact info on page. Half functional, false positive for places, can't find numbers or emails." />
+    <MESSAGE value="Split into Scraper and CLI." />
+    <MESSAGE value="removing duplicate results." />
+    <option name="LAST_COMMIT_MESSAGE" value="removing duplicate results." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -291,17 +307,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScraperCLI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        <state relative-caret-position="170">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scraper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>

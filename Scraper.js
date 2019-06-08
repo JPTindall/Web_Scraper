@@ -1,11 +1,13 @@
+const readline = require('readline');
 module.exports = {
-  begin: async function begin(email){
+  begin: function begin(email,promptCallback,out){
       const url = "https://www." + getDomain(email);
       console.log('Site to Search: ' + url + '\n');
-      await getSite(url);
-      return new Promise(resolve => {
-          resolve();
+      getSite(url, function (result) {
+          console.log(result);
+          promptCallback(out);
       });
+      return;
   }
 };
 
@@ -30,12 +32,13 @@ function getDomain(email) {
 }
 
 const url = "https://www." + getDomain(email);
-getSite(url);
+let result = getSite(url);
 console.log('Site to Search: ' + url + '\n');
-
+//print out each desired class
+console.log(result); //TODO make more readable
 
 //get HTML
-function getSite(url) {
+function getSite(url, callback) {
     const https = require('https');
     https.get(url, (res) => {
         const {statusCode} = res;
@@ -63,9 +66,7 @@ function getSite(url) {
             // console.log(rawData);
             let text = parseHTML(rawData);
             let contact = findData(text);
-
-            //print out each desired class
-            console.log(contact); //TODO make more readable
+            callback(contact);
         });
     });
 }
