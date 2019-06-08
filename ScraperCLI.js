@@ -14,8 +14,6 @@ if(!email.includes('@')){
 }
 
 const https = require('https');
-const Knwl = require("knwl.js");
-let knwlInstance = new Knwl('english');
 
 //get the domain from an email address
 function getDomain(email) {
@@ -62,11 +60,25 @@ function getSite(url) {
 function parseHTML(html) {
     const cheerio = require('cheerio');
     const $ = cheerio.load(html);
-    console.log($("h1").text());
-
     //search entire html for useful data
-
+    let text = $("html").text().trim();
+    let contact = findData(text);
+    console.log(contact);
     //add class to html for each type of data
 
+
     //print out each desired class
+}
+
+function findData(text) {
+    const Knwl = require("knwl.js");
+    let knwlInstance = new Knwl('english');
+
+    knwlInstance.init(text);
+    let phones = knwlInstance.get('phones');
+    let emails = knwlInstance.get('emails');
+    let places = knwlInstance.get('places');
+
+    let contactInfo = [emails, phones, places];
+    return contactInfo;
 }
