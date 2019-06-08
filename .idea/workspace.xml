@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7600eede-e2e8-495d-94a9-cde20227bb93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Scraper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScraperCLI.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScraperCLI.js" afterDir="false" />
     </list>
@@ -16,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScraperCLI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="442">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scraper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -37,17 +47,20 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="JPTindall &lt;jack.p.tindall@googlemail.com&gt;" />
         <option value="JPTindall" />
         <option value="Jack" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SiteReader.js" />
         <option value="$PROJECT_DIR$/ScraperServer.js" />
+        <option value="$PROJECT_DIR$/Scraper.js" />
         <option value="$PROJECT_DIR$/ScraperCLI.js" />
       </list>
     </option>
@@ -116,7 +129,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ScraperCLI.js" type="NodeJSConfigurationType" temporary="true" application-parameters="test@test.com" nameIsGenerated="true" path-to-js-file="ScraperCLI.js" working-dir="$PROJECT_DIR$">
+    <configuration name="ScraperCLI.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="ScraperCLI.js" working-dir="$PROJECT_DIR$">
       <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
         <browser name="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" with-js-debugger="true" />
       </EXTENSION>
@@ -147,7 +160,7 @@
       <workItem from="1559853416829" duration="6924000" />
       <workItem from="1559901740511" duration="1539000" />
       <workItem from="1559903939494" duration="21922000" />
-      <workItem from="1559990682225" duration="943000" />
+      <workItem from="1559990682225" duration="3732000" />
     </task>
     <task id="LOCAL-00001" summary="fixed small error in getDomain function">
       <created>1559905453309</created>
@@ -184,11 +197,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559940295589</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finding contact info on page. Half functional, false positive for places, can't find numbers or emails.">
+      <created>1559991721483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559991721483</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31328000" />
+    <option name="totallyTimeSpent" value="34117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -209,7 +229,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31497797" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31497797" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -218,7 +238,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32929516" />
       <window_info anchor="bottom" id="GraphQL" order="9" weight="0.32929516" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010846" side_tool="true" weight="0.32929516" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4989154" visible="true" weight="0.32929516" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989154" weight="0.32929516" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4989154" weight="0.32929516" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -235,7 +255,8 @@
     <MESSAGE value="getting http from website of email" />
     <MESSAGE value="improved getting http from website of email." />
     <MESSAGE value="finding elements in html. Must be called after end of response from server." />
-    <option name="LAST_COMMIT_MESSAGE" value="finding elements in html. Must be called after end of response from server." />
+    <MESSAGE value="Finding contact info on page. Half functional, false positive for places, can't find numbers or emails." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finding contact info on page. Half functional, false positive for places, can't find numbers or emails." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -272,8 +293,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ScraperCLI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="442">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scraper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
