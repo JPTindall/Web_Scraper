@@ -1,8 +1,11 @@
 module.exports = {
-  begin: function begin(email){
+  begin: async function begin(email){
       const url = "https://www." + getDomain(email);
       console.log('Site to Search: ' + url + '\n');
-      getSite(url);
+      await getSite(url);
+      return new Promise(resolve => {
+          resolve();
+      });
   }
 };
 
@@ -71,8 +74,8 @@ function getSite(url) {
 function parseHTML(html) {
     const cheerio = require('cheerio');
     const $ = cheerio.load(html);
-    //search entire html for useful data
-    let text = $("html").text().trim();
+    //entire text on page
+    let text = $("html").html();
     return text;
 }
 
@@ -86,6 +89,20 @@ function findData(text) {
     let emails = knwlInstance.get('emails');
     let places = knwlInstance.get('places');
 
-    let contactInfo = [emails, phones, places];
+    //remove duplicates
+    let uniqPhone = uniqBy(phones, 'number');
+    let uniqEmail = uniqBy(emails, 'address');
+    let uniqPlace = uniqBy(places, 'place');
+
+
+    let contactInfo = [uniqEmail, uniqPhone, uniqPlace];
     return contactInfo;
+}
+
+function uniqBy(a, key) {
+    var seen = {};
+    return a.filter(function(item) {
+        var k = item[key];
+        return seen.hasOwnProperty(k) ? false : (seen[k] = true);
+    });
 }
