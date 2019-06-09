@@ -88,15 +88,21 @@ function findData(text,html) {
     let knwlTextInstance = new Knwl('english');
     let knwlHTMLInstance = new Knwl();
 
+    knwlTextInstance.register('UKPhones', require('./PhoneUK'));
+
     knwlTextInstance.init(text);
     knwlHTMLInstance.init(html);
     let phones = knwlTextInstance.get('phones');
+    let UKphones = knwlTextInstance.get('UKPhones');
     let emails = knwlHTMLInstance.get('emails');
     let places = knwlTextInstance.get('places');
 
+    for(var phone in UKphones){
+        phones.push(phone);
+    }
 
     //remove duplicates
-    let uniqPhone = uniqBy(phones, 'number');
+    let uniqPhone = uniqBy(phones, 'phone');
     let uniqEmail = uniqBy(emails, 'address');
     let uniqPlace = uniqBy(places, 'place');
 
