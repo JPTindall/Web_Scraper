@@ -92,14 +92,14 @@ function findData(text,html) {
 
     knwlTextInstance.init(text);
     knwlHTMLInstance.init(html);
-    let phones = knwlTextInstance.get('phones');
-    let UKphones = knwlTextInstance.get('UKPhones');
+    // let phones = knwlTextInstance.get('phones');
+    let phones = knwlTextInstance.get('UKPhones');
     let emails = knwlHTMLInstance.get('emails');
     let places = knwlTextInstance.get('places');
 
-    for(var phone in UKphones){
-        phones.push(phone);
-    }
+    // for(var phone in UKphones){
+    //     phones.push(phone);
+    // }
 
     //remove duplicates
     let uniqPhone = uniqBy(phones, 'phone');
