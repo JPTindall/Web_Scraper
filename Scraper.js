@@ -97,20 +97,16 @@ function findData(text,html) {
     let emails = knwlHTMLInstance.get('emails');
     let places = knwlTextInstance.get('places');
 
-    // for(var phone in UKphones){
-    //     phones.push(phone);
-    // }
-
     //remove duplicates
     let uniqPhone = uniqBy(phones, 'phone');
     let uniqEmail = uniqBy(emails, 'address');
     let uniqPlace = uniqBy(places, 'place');
 
-
     let contactInfo = [uniqEmail, uniqPhone, uniqPlace];
     return contactInfo;
 }
 
+//remove duplicate entries by key
 function uniqBy(a, key) {
     var seen = {};
     return a.filter(function(item) {
